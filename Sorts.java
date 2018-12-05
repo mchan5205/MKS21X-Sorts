@@ -1,11 +1,11 @@
 public class Sorts{
-  public static void selectionsort(int[] ary){
+  public static void selectionSort(int[] ary){
     int smallest = ary[0];
     int index = 0;
     for (int i = 0; i < ary.length - 1; i++){
-      for (int x = i; x < ary.length; i++){
+      for (int x = i; x < ary.length; x++){
         if (ary[x] < smallest){
-          smallest = ary[i];
+          smallest = ary[x];
           index = x;
         }
       }
