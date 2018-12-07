@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Sorts{
   public static void selectionSort(int[] ary){
     int smallest = ary[0];
@@ -27,6 +28,11 @@ public class Sorts{
     }
   }
   public static void main(String[] args){
-    
+    int[] ary = new int[Integer.parseInt(args[0])];
+    Random x = new Random();
+    for (int i = 0; i < Integer.parseInt(args[0]); i++){
+      args[i] = x.nextInt();
+    }
+    bubbleSort(ary);
   }
 }
