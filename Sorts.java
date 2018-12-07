@@ -18,7 +18,7 @@ public class Sorts{
   }
   public static void bubbleSort(int[] ary){
     for (int i = 0; i < ary.length; i++){
-      for (int x = 0; x < ary.length - i; x++){
+      for (int x = 0; x < ary.length - 1 - i; x++){
         int temp = ary[x];
         if (ary[x] > ary[x + 1]){
           ary[x] = ary[x + 1];
@@ -31,8 +31,11 @@ public class Sorts{
     int[] ary = new int[Integer.parseInt(args[0])];
     Random x = new Random();
     for (int i = 0; i < Integer.parseInt(args[0]); i++){
-      args[i] = x.nextInt();
+      ary[i] = x.nextInt();
     }
     bubbleSort(ary);
+    for (int i = 0; i < ary.length; i++){
+      System.out.print(ary[i] + " ");
+    }
   }
 }
