@@ -15,4 +15,18 @@ public class Sorts{
       index = i + 1;
     }
   }
+  public static void bubbleSort(int[] ary){
+    for (int i = 0; i < ary.length; i++){
+      for (int x = 0; x < ary.length - i; x++){
+        int temp = ary[x];
+        if (ary[x] > ary[x + 1]){
+          ary[x] = ary[x + 1];
+          ary[x + 1] = temp;
+        }
+      }
+    }
+  }
+  public static void main(String[] args){
+    
+  }
 }
