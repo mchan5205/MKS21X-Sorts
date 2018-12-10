@@ -27,13 +27,31 @@ public class Sorts{
       }
     }
   }
+  public static void insertionSort(int[] ary){
+    int temp;
+    int x;
+    for (int i = 0; i < ary.length; i++){
+      temp = ary[i];
+      x = 1;
+      while (i - x >= 0){
+        if (ary[i] < ary[i - x]){
+          ary[i - x + 1] = ary[i - x];
+          x += 1;
+        }
+        else{
+          ary[i] = ary[i - x + 1];
+          x = i + 1;
+        }
+      }
+    }
+  }
   public static void main(String[] args){
     int[] ary = new int[Integer.parseInt(args[0])];
     Random x = new Random();
     for (int i = 0; i < Integer.parseInt(args[0]); i++){
       ary[i] = x.nextInt();
     }
-    bubbleSort(ary);
+    insertionSort(ary);
     for (int i = 0; i < ary.length; i++){
       System.out.print(ary[i] + " ");
     }
