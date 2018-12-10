@@ -34,12 +34,12 @@ public class Sorts{
       temp = ary[i];
       x = 1;
       while (i - x >= 0){
-        if (ary[i] < ary[i - x]){
+        if (temp < ary[i - x]){
           ary[i - x + 1] = ary[i - x];
           x += 1;
         }
         else{
-          ary[i] = ary[i - x + 1];
+          ary[i - x + 1] = temp;
           x = i + 1;
         }
       }
@@ -51,6 +51,10 @@ public class Sorts{
     for (int i = 0; i < Integer.parseInt(args[0]); i++){
       ary[i] = x.nextInt();
     }
+    for (int i = 0; i < ary.length; i++){
+      System.out.print(ary[i] + " ");
+    }
+    System.out.println("");
     insertionSort(ary);
     for (int i = 0; i < ary.length; i++){
       System.out.print(ary[i] + " ");
