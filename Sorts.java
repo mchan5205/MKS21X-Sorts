@@ -30,26 +30,40 @@ public class Sorts{
   public static void insertionSort(int[] ary){
     int temp;
     int x;
+    boolean done;
     for (int i = 0; i < ary.length; i++){
       temp = ary[i];
       x = 1;
-      while (i - x >= 0){
-        if (temp < ary[i - x]){
+      done = false;
+      while (i - x >= 0 && ! done){
+        if (temp < ary[i - x] && ! done){
           ary[i - x + 1] = ary[i - x];
           x += 1;
         }
         else{
-          ary[i - x + 1] = temp;
-          x = i + 1;
+          done = true;
         }
       }
+      if (i - x >= 0 && ! done){
+        ary[i - x] = temp;
+      }
+      if (done){
+        ary[i - x + 1] = temp;
+      }
+      else{
+        ary[0] = temp;
+      }
+      for (int z = 0; z < ary.length; z++){
+        System.out.print(ary[z] + " ");
+      }
+      System.out.println("");
     }
   }
   public static void main(String[] args){
     int[] ary = new int[Integer.parseInt(args[0])];
     Random x = new Random();
     for (int i = 0; i < Integer.parseInt(args[0]); i++){
-      ary[i] = x.nextInt();
+      ary[i] = x.nextInt() % 100;
     }
     for (int i = 0; i < ary.length; i++){
       System.out.print(ary[i] + " ");
