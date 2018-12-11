@@ -36,7 +36,7 @@ public class Sorts{
       x = 1;
       done = false;
       while (i - x >= 0 && ! done){
-        if (temp < ary[i - x] && ! done){
+        if (temp < ary[i - x]){
           ary[i - x + 1] = ary[i - x];
           x += 1;
         }
@@ -53,10 +53,6 @@ public class Sorts{
       else{
         ary[0] = temp;
       }
-      for (int z = 0; z < ary.length; z++){
-        System.out.print(ary[z] + " ");
-      }
-      System.out.println("");
     }
   }
   public static void main(String[] args){
