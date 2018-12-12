@@ -28,31 +28,20 @@ public class Sorts{
     }
   }
   public static void insertionSort(int[] ary){
-    int temp;
-    int x;
-    boolean done;
     for (int i = 0; i < ary.length; i++){
-      temp = ary[i];
-      x = 1;
-      done = false;
-      while (i - x >= 0 && ! done){
-        if (temp < ary[i - x]){
-          ary[i - x + 1] = ary[i - x];
-          x += 1;
+      int temp = ary[i];
+      int x = i - 1;
+      boolean done = false;
+      while (x >= 0 && ! done){
+        if (ary[x] > temp){
+          ary[x + 1] = ary[x];
+          x = x - 1;
         }
         else{
           done = true;
         }
       }
-      if (i - x >= 0 && ! done){
-        ary[i - x] = temp;
-      }
-      if (done){
-        ary[i - x + 1] = temp;
-      }
-      else{
-        ary[0] = temp;
-      }
+      ary[x + 1] = temp;
     }
   }
   public static void main(String[] args){
